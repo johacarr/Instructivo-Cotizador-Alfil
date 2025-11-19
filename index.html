@@ -215,8 +215,9 @@
           
           <p>Esta pantalla está compuesta por 4 secciones principales:</p>
           <div class="imagenes">
-        <img src="img/desk-cotizarII.png" alt="Pantalla Menú Principal" style="max-width:70%; border:1px solid #ccc; margin-top:10px;">
+        <img src="img/desk-cotizar.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
       </div>
+      <br></br>
       <ul>
     <li>
       <strong>Seleccionar lista de precios:</strong> 
@@ -274,20 +275,161 @@
         <img src="img/desk-detalle-prod.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
       </div> 
       <br></br>
+      <p>
+    Finalmente, presione el botón <strong>Siguiente</strong> para continuar con la Pantalla de Condiciones de ventas.
+
+  </p>
     </li>
   </ul>
         `,
         condiciones: `
-          <h2>Pantalla de Condiciones de Ventas</h2>
-          <p>Permite elegir la condición de venta (contado, cuotas, semanal, quincenal, etc.), mostrando automáticamente el cálculo de anticipo, intereses, recargos y fechas de vencimiento.</p>
-        `,
+  <h2>Pantalla de condición de venta</h2>
+  <div class="imagenes">
+        <img src="img/desk-condiciones.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
+      </div> 
+      <br></br>
+      <h3>Selección de condición de venta</h3>
+  <p>
+    En esta pantalla el usuario debe seleccionar, desde el desplegable, la condición de venta que corresponda a la cotización 
+    (ejemplo: <em>contado, cuotas, semanal, quincenal</em>, etc.).
+  </p>
+    <div class="imagenes">
+        <img src="img/desk-condicion-seleccionar.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
+      </div> 
+      <br></br>
+
+  <h3>Ingreso de Anticipo</h3>
+  <p>
+    Una vez seleccionada la condición de venta, el sistema calcula automáticamente el anticipo, siempre y cuando dicha condición lo contemple.
+  </p>
+  <p>
+    El botón <strong>Generar</strong> tiene la función de generar los vencimientos.
+  </p>
+<div class="imagenes">
+        <img src="img/desk-condicion-anticipo.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
+      </div> 
+      <br></br>
+  <h3>Resumen de Plan de Pago</h3>
+  <p>En esta sección se presenta un detalle del plan de pago resultante según la condición de venta seleccionada. El resumen incluye:</p>
+  <ul>
+    <li><strong>Total financiado:</strong> importe que se distribuye en cuotas.</li>
+    <li><strong>Anticipo:</strong> valor inicial abonado al momento de la operación (si corresponde).</li>
+    <li><strong>Cantidad de cuotas:</strong> número de pagos en los que se divide el saldo.</li>
+    <li><strong>Monto de cada cuota:</strong> importe calculado por cuota.</li>
+    <li><strong>Tipo de período:</strong> periodicidad definida para los vencimientos (mensual, quincenal, semanal, etc.).</li>
+  </ul>
+<div class="imagenes">
+        <img src="img/desk-condicion-detalle.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
+      </div> 
+      <br></br>
+  <h3>Vencimientos</h3>
+  <p>En esta sección el sistema muestra un detalle de los vencimientos generados a partir de la condición de venta seleccionada. La vista incluye:</p>
+  <ul>
+    <li><strong>Número de cuota:</strong> identificación de cada cuota.</li>
+    <li><strong>Fecha de vencimiento:</strong> día en que corresponde abonar cada cuota, calculado automáticamente según el período definido.</li>
+    <li><strong>Monto de la cuota:</strong> valor a pagar en cada vencimiento.</li>
+  </ul>
+<div class="imagenes">
+        <img src="img/desk-condicion-vencimiento.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
+      </div> 
+      <br></br>
+      <h3>Total</h3>
+  <p>En esta sección el sistema muestra el total recalculado en función de la condición de venta seleccionada.</p>
+  <p>El nuevo total considera:</p>
+  <ul>
+    <li><strong>Anticipo aplicado</strong> (si corresponde).</li>
+    <li><strong>Intereses o recargos</strong> asociados al plan de pago..</li>
+    <li><strong>Número de cuotas y periodicidad</strong> seleccionados.</li>
+  </ul>
+<div class="imagenes">
+        <img src="img/desk-condicion-total.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
+      </div> 
+      <p>Presione el botón <strong>Siguiente</strong> para continuar con la Pantalla de Medios de Pagos.</p>
+      <br></br>
+`,
         pagos: `
           <h2>Pantalla de Medios de Pago</h2>
+          <div class="imagenes">
+        <img src="img/desk-mediopago.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
+      </div> 
           <p>En esta etapa el usuario selecciona la forma de pago. El sistema permite elegir entre tarjetas, cheques u otros medios, mostrando planes disponibles y promociones bancarias vigentes.</p>
-        `,
+        <h3>Saldo</h3>
+  <p>
+    Se muestra el monto pendiente a cancelar. Este valor corresponde al de la primera cuota 
+    (o cuota cero, según la condición de venta seleccionada).
+  </p>
+
+  <h3>Ingreso de monto a pagar</h3>
+  <p>
+    El sistema precarga automáticamente el valor de la primera cuota a saldar. 
+    Si se desea pagar de forma parcial, se debe modificar este campo indicando cuánto se abonará 
+    en efectivo, tarjeta o cheque.
+  </p>
+
+  <h3>Selección de Medios de Pago</h3>
+  <p>El usuario puede elegir entre las siguientes opciones:</p>
+  <ul>
+    <li>
+      <strong>Efectivo:</strong> Al hacer clic en <em>Efectivo</em> se despliega el detalle. 
+      Se debe seleccionar la opción en efectivo y confirmar con el botón <strong>Agregar</strong>.
+    </li>
+    <li>
+      <strong>Tarjeta de débito/crédito:</strong> Al hacer clic en esta opción se despliega el detalle 
+      para seleccionar la tarjeta y plan disponible.  
+      Al desplegar el listado de tarjeta, el sistema muestra las tarjetas disponibles y también un campo 
+      en donde podemos escribir para filtrar o buscar una tarjeta en específico.
+    </li>
+    <li>
+      <strong>Cheque:</strong> Al hacer clic en <em>Cheque</em> se despliega la información para seleccionar 
+      el tipo de cheque a utilizar.
+    </li>
+  </ul>
+
+  <h3>Medios de Pago agregados</h3>
+  <p>Lista los medios de pago agregados. Se muestra:</p>
+  <ul>
+    <li>Descripción del medio de pago.</li>
+    <li>Recargo aplicado (si corresponde).</li>
+    <li>Total del pago.</li>
+  </ul>
+  <p>Cada ítem tiene un botón para eliminarlo si fuese necesario.</p>
+
+  <h3>Total</h3>
+  <p>
+    El sistema recalcula automáticamente el total de la cotización considerando los medios de pago ingresados.
+  </p>
+          `,
         confirmacion: `
           <h2>Pantalla de Confirmación</h2>
-          <p>Presenta un consolidado del presupuesto con todos los detalles: productos seleccionados, descuentos aplicados, impuestos discriminados (IVA, Ingresos Brutos), condiciones de venta, medios de pago y el total final.</p>
+  <p>
+    En esta pantalla se visualiza en detalle el resultado final de la cotización antes de confirmar.
+    Está compuesta por dos secciones principales: <strong>Cliente</strong> y <strong>Detalle del presupuesto</strong>.
+  </p>
+<div class="imagenes">
+        <img src="img/desk-confirmacion.png" alt="Pantalla Menú Principal"">
+        <img src="img/desk-confirmacionII.png" alt="Pantalla Menú Principal">
+      </div> 
+  <h3>Cliente</h3>
+  <p>
+    El sistema permite seleccionar un cliente existente o crear un nuevo cliente.
+  </p>
+
+  <h4>Buscar Cliente</h4>
+  <p>
+    Al hacer clic en el botón <strong>Seleccionar cliente</strong> se abre una ventana emergente con un buscador.
+    Se puede localizar un cliente existente aplicando filtros o ingresando datos en el campo de búsqueda.
+  </p>
+
+  <h4>Crear Cliente</h4>
+  <p>
+    Al hacer clic en el botón <strong>Nuevo</strong>, se habilita el alta de un cliente. 
+    Se deben ingresar los siguientes datos:
+  </p>
+  <ul>
+    <li><strong>Datos Generales:</strong> código, nombre, tipo y número de documento, condición de IVA, descripción.</li>
+    <li><strong>Teléfonos:</strong> se pueden registrar múltiples números de contacto.</li>
+    <li><strong>Correos electrónicos:</strong> admite más de una dirección de correo.</li>
+    <li><strong>Domicilios:</strong> se permite cargar múltiples domicilios, cada uno con
         `,
         presupuesto: `
           <h2>Pantalla de Presupuesto generado</h2>
