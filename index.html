@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Demo Master-Detail</title>
+    <style>
+      body {
+        font-family: "Roboto", Arial, sans-serif; /* nueva fuente */
+        margin: 0;
+        background-color: #f4f6f9; /* color de fondo general */
+        color: #333; /* color de texto */
+      }
+
+      .container {
+        display: flex;
+        height: 100vh;
+      }
+
+      .container ul li {
+        margin-bottom: 12px; /* espacio entre cada li */
+      }
+
+      .sidebar {
+        width: 20%;
+        border-right: 2px solid #4a90e2; /* azul más vivo */
+        padding: 1rem;
+        background: #ffffff; /* blanco limpio */
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        overflow-y: auto;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .sidebar li {
+        padding: 0.7rem;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s, color 0.3s;
+        font-size: 15px;
+      }
+
+      .sidebar li.active {
+        background: #4a90e2; /* azul para el seleccionado */
+        color: #fff; /* texto blanco */
+        font-weight: bold;
+      }
+
+      .sidebar li:hover {
+        background: #e6f0fa; /* azul muy suave al pasar el mouse */
+        color: #4a90e2;
+      }
+
+      .content {
+        margin-left: 25%; /* mismo valor que el ancho de la sidebar */
+        width: 65%; /* ocupa el resto del espacio */
+        padding: 1rem;
+        margin-top: 0.5rem;
+        height: 100vh;
+        overflow-y: auto;
+        background-color: #fdfdfd; /* fondo claro */
+      }
+
+      .content h2,
+      .content h3 {
+        color: #4a90e2; /* títulos en azul */
+        font-weight: 700;
+      }
+
+      .imagenes {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .imagenes img {
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        max-width: 45%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <ul>
+          <li onclick="showContent('intro', this)">Introducción</li>
+          <li onclick="showContent('inicio', this)">
+            Pantalla de inicio de sesión
+          </li>
+          <li onclick="showContent('menu', this)">Pantalla Menú Principal</li>
+          <li onclick="showContent('productos', this)">
+            Pantalla de Selección de Productos
+          </li>
+          <li onclick="showContent('condiciones', this)">
+            Pantalla de Condiciones de Ventas
+          </li>
+          <li onclick="showContent('pagos', this)">
+            Pantalla de Medios de Pago
+          </li>
+          <li onclick="showContent('confirmacion', this)">
+            Pantalla de Confirmación
+          </li>
+          <li onclick="showContent('presupuesto', this)">
+            Pantalla de Presupuesto generado
+          </li>
+        </ul>
+      </div>
+      <div class="content" id="content">
+        <h2>Selecciona un tema</h2>
+        <p>Haz clic en un título de la izquierda para ver el contenido aquí.</p>
+      </div>
+    </div>
+
+    <script>
+      const contenidos = {
+        intro: `
+      <h2>Introducción</h2>
+          <p>
+            El cotizador Alfil es una plataforma diseñada para que los
+            vendedores puedan generar presupuestos de forma ágil, a través de un
+            flujo de trabajo dividido en pantallas sucesivas, que permite desde
+            la selección de productos hasta la generación de un documento final
+            que puede compartirse con el cliente.
+          </p>
+
+          <h3>Las pantallas del proceso son:</h3>
+          <ul>
+            <li>
+              <strong>Pantalla de inicio de sesión:</strong> permite acceder al
+              sistema ingresando usuario y contraseña.
+            </li>
+            <li>
+              <strong>Pantalla Menú Principal:</strong> brinda acceso a las
+              diferentes funcionalidades del sistema.
+            </li>
+            <li>
+              <strong>Pantalla de Selección de Productos:</strong> facilita la
+              búsqueda, selección y agregado de los artículos que integrarán la
+              cotización. Además, permite consultar la lista de precios,
+              disponibilidad de stock y las características técnicas del
+              producto.
+            </li>
+            <li>
+              <strong>Pantalla de Condiciones de Ventas:</strong> permite elegir
+              la condición de venta (contado, cuotas, semanal, quincenal, etc.),
+              mostrando automáticamente el cálculo de anticipo, intereses,
+              recargos y fechas de vencimiento.
+            </li>
+            <li>
+              <strong>Pantalla de Medios de Pago:</strong> en esta etapa el
+              usuario selecciona la forma de pago. El sistema permite elegir
+              entre tarjetas, cheques u otros medios, mostrando planes
+              disponibles y promociones bancarias vigentes.
+            </li>
+            <li>
+              <strong>Pantalla de Confirmación:</strong> presenta un consolidado
+              del presupuesto con todos los detalles: productos seleccionados,
+              descuentos aplicados, impuestos discriminados (IVA, Ingresos
+              Brutos), condiciones de venta, medios de pago y el total final.
+            </li>
+            <li>
+              <strong>Pantalla de Presupuesto generado:</strong> genera un
+              documento final de la cotización que podrá ser entregado al
+              cliente.
+            </li>
+          </ul>   
+      
+    `,
+        inicio: `
+      <h2>Acceso al Sistema</h2>
+      <p>
+        Para ingresar al cotizador, debe accederse a la siguiente dirección web:
+        <a href="https://mya.alfil.com.ar/" target="_blank">https://mya.alfil.com.ar/</a>
+      </p>
+      <p>
+        Se mostrará la pantalla de inicio de sesión, donde se deberán completar los siguientes campos:
+      </p>
+      <ul>
+        <li><strong>Usuario:</strong> ingresar el número de DNI.</li>
+        <li><strong>Contraseña:</strong> ingresar la clave asignada por el administrador.</li>
+      </ul>
+      <p>
+        Finalmente, presione el botón <strong>Entrar</strong> para acceder al sistema.
+      </p>      
+        <img src="img/pantalla sesion.png" alt="Pantalla de inicio de sesión" style="max-width:100%; border:1px solid #ccc; margin-top:10px;">     
+      
+    `,
+        menu: `
+          <h2>Menú Principal</h2>
+      <p>
+        Al ingresar a Alfil, se presenta un panel de control que ofrece una visión general de los módulos principales: <strong>Ventas</strong>, <strong>Presupuestos</strong>, <strong>Notas de Ventas</strong>, entre otros.
+      </p>      
+      <div class="imagenes">
+        <img src="img/mobile - menu.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
+      </div>
+      <p>
+        En la barra lateral de navegación, el usuario puede acceder a todas las opciones disponibles.
+        Al hacer clic en el ítem <strong>Ventas</strong> y luego en <strong>Cotizar</strong> se abrirá la Pantalla de Selección de Productos.
+      </p>
+      <div class="imagenes">
+        <img src="img/desk-barra-lateral.png" alt="Pantalla Menú Principal">
+        <img src="img/desk-barra-desplegada.png" alt="Pantalla Menú Principal">
+      </div>
+        `,
+        productos: `
+          <h2>Pantalla de Selección de Productos</h2>
+          
+          <p>Esta pantalla está compuesta por 4 secciones principales:</p>
+          <div class="imagenes">
+        <img src="img/desk-cotizarII.png" alt="Pantalla Menú Principal" style="max-width:70%; border:1px solid #ccc; margin-top:10px;">
+      </div>
+      <ul>
+    <li>
+      <strong>Seleccionar lista de precios:</strong> 
+      Al ingresar a la pantalla de Productos para la Cotización, el primer paso es seleccionar la lista de precios desde el desplegable de listas. 
+      Una vez elegida la lista de precios, todos los productos que se busquen o agreguen estarán asociados a esa lista.
+      <div class="imagenes">
+        <img src="img/desk-listapre.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
+      </div>
+    </li>
+    <li>
+      <strong>Búsqueda del producto y previsualización:</strong> 
+      En el campo de búsqueda se debe ingresar el nombre o el código alfanumérico del producto. 
+      El sistema mostrará automáticamente los resultados coincidentes, permitiendo también realizar búsquedas parciales.
+      <div class="imagenes">
+        <img src="img/desk-productos.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
+      </div> 
+      <br></br>
+      Al hacer clic sobre un producto en la lista de resultados, se agrega al área de previsualización.
+      <div class="imagenes">
+        <img src="img/desk-previsualizacion.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
+      </div> 
+      <br></br>
+      Si hacemos clic sobre ese producto agregado, el usuario podrá visualizar sus detalles.
+      <div class="imagenes">
+        <img src="img/desk-descripcion-prod.png" alt="Pantalla Menú Principal" style="max-width:30%; border:1px solid #ccc; margin-top:10px;">
+        <img src="img/desk-descripcion-prodII.png" alt="Pantalla Menú Principal" style="max-width:30%; border:1px solid #ccc; margin-top:10px;">
+      </div> 
+      <br></br>
+    </li>
+    <li>
+      <strong>Descuento y Cantidad:</strong> 
+      Luego de seleccionar el producto, el sistema permite definir la cantidad deseada y, en caso necesario, aplicar un descuento. 
+      El descuento puede ingresarse en porcentaje (%) <img src="img/desk-icono-desc-porc.png" alt="Pantalla Menú Principal" style="max-width:10%; border:1px solid #ccc; margin-top:10px;"> o en monto fijo ($) <img src="img/desk-icono-desc-pesos.png" alt="Pantalla Menú Principal" style="max-width:10%; border:1px solid #ccc; margin-top:10px;">
+      <div class="imagenes">
+        <img src="img/desk-descuento.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
+      </div> 
+      <br></br>
+      Para alternar entre ambos modos, basta con hacer clic en el icono de porcentaje, que cambiará al icono de monto, y viceversa.
+      <div class="imagenes">
+        <img src="img/desk-descuentoII.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
+      </div> 
+      <br></br>
+      Para definir la cantidad del producto seleccionado se utilizan los iconos + y -, que permiten incrementarla o reducirla de manera sencilla. 
+      Una vez configurada la cantidad (y el descuento en caso de corresponder), presiona el botón <strong>Agregar</strong>.
+      <div class="imagenes">
+        <img src="img/desk-cantidad-prod.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
+      </div> 
+      <br></br>
+    </li>
+    <li>
+      <strong>Productos Agregados:</strong> 
+      Con esta acción, el producto se trasladará automáticamente al área de Productos Agregados de la cotización. 
+      En esta sección se visualizarán todos los artículos que el usuario haya incorporado a la cotización.
+      <div class="imagenes">
+        <img src="img/desk-detalle-prod.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
+      </div> 
+      <br></br>
+    </li>
+  </ul>
+        `,
+        condiciones: `
+          <h2>Pantalla de Condiciones de Ventas</h2>
+          <p>Permite elegir la condición de venta (contado, cuotas, semanal, quincenal, etc.), mostrando automáticamente el cálculo de anticipo, intereses, recargos y fechas de vencimiento.</p>
+        `,
+        pagos: `
+          <h2>Pantalla de Medios de Pago</h2>
+          <p>En esta etapa el usuario selecciona la forma de pago. El sistema permite elegir entre tarjetas, cheques u otros medios, mostrando planes disponibles y promociones bancarias vigentes.</p>
+        `,
+        confirmacion: `
+          <h2>Pantalla de Confirmación</h2>
+          <p>Presenta un consolidado del presupuesto con todos los detalles: productos seleccionados, descuentos aplicados, impuestos discriminados (IVA, Ingresos Brutos), condiciones de venta, medios de pago y el total final.</p>
+        `,
+        presupuesto: `
+          <h2>Pantalla de Presupuesto generado</h2>
+          <p>Genera un documento final de la cotización que podrá ser entregado al cliente.</p>
+        `,
+      };
+
+      function showContent(key, element) {
+        // Mostrar contenido
+        document.getElementById("content").innerHTML = contenidos[key];
+
+        // Quitar la clase 'active' de todos los items
+        document
+          .querySelectorAll(".sidebar li")
+          .forEach((li) => li.classList.remove("active"));
+
+        // Agregar la clase 'active' al item clicado
+        if (element) {
+          element.classList.add("active");
+        }
+
+        // 🔑 Mover el scroll al inicio del contenedor
+        document.getElementById("content").scrollTop = 0;
+      }
+
+      // Al cargar la página, mostrar "intro" y marcarlo activo
+      window.onload = function () {
+        const firstItem = document.querySelector(".sidebar li"); // primer li
+        showContent("intro", firstItem);
+      };
+    </script>
+  </body>
+</html>
