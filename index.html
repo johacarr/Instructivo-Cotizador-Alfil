@@ -57,7 +57,7 @@
 
       .content {
         margin-left: 25%; /* mismo valor que el ancho de la sidebar */
-        width: 65%; /* ocupa el resto del espacio */
+        width: 80%; /* ocupa el resto del espacio */
         padding: 1rem;
         margin-top: 0.5rem;
         height: 100vh;
@@ -372,16 +372,25 @@
     <li>
       <strong>Efectivo:</strong> Al hacer clic en <em>Efectivo</em> se despliega el detalle. 
       Se debe seleccionar la opción en efectivo y confirmar con el botón <strong>Agregar</strong>.
+      <div class="imagenes">
+        <img src="img/desk-mediopago-efectivo.png" alt="Pantalla Menú Principal"">
+      </div> 
     </li>
     <li>
       <strong>Tarjeta de débito/crédito:</strong> Al hacer clic en esta opción se despliega el detalle 
       para seleccionar la tarjeta y plan disponible.  
       Al desplegar el listado de tarjeta, el sistema muestra las tarjetas disponibles y también un campo 
       en donde podemos escribir para filtrar o buscar una tarjeta en específico.
+      <div class="imagenes">
+        <img src="img/desk-mediopago-tarjeta.png" alt="Pantalla Menú Principal"">
+      </div> 
     </li>
     <li>
       <strong>Cheque:</strong> Al hacer clic en <em>Cheque</em> se despliega la información para seleccionar 
       el tipo de cheque a utilizar.
+      <div class="imagenes">
+        <img src="img/desk-mediopago-cheque.png" alt="Pantalla Menú Principal"">
+      </div> 
     </li>
   </ul>
 
@@ -419,7 +428,9 @@
     Al hacer clic en el botón <strong>Seleccionar cliente</strong> se abre una ventana emergente con un buscador.
     Se puede localizar un cliente existente aplicando filtros o ingresando datos en el campo de búsqueda.
   </p>
-
+  <div class="imagenes">
+        
+  </div> 
   <h4>Crear Cliente</h4>
   <p>
     Al hacer clic en el botón <strong>Nuevo</strong>, se habilita el alta de un cliente. 
@@ -429,11 +440,34 @@
     <li><strong>Datos Generales:</strong> código, nombre, tipo y número de documento, condición de IVA, descripción.</li>
     <li><strong>Teléfonos:</strong> se pueden registrar múltiples números de contacto.</li>
     <li><strong>Correos electrónicos:</strong> admite más de una dirección de correo.</li>
-    <li><strong>Domicilios:</strong> se permite cargar múltiples domicilios, cada uno con
+    <li><strong>Domicilios:</strong> se permite cargar múltiples domicilios, cada uno con:</li>
+    
+    <br></br>    
+  </ul>
+ <h3>Detalle del presupuesto</h3>
+  <ul>
+    <li><strong>Pedido:</strong>Listado de los productos agregados al presupuesto</li>
+    <li><strong>Condición de venta:</strong>Visualización de la condición de venta seleccionada.</li>
+    <li><strong>Medios de pagos:</strong>Se listan todos los medios de pagos seleccionados.</li>
+    <li><strong>Total:</strong> Presenta el subtotal prorrateado por producto.</li>
+  </ul>
+  <br></br> 
+  Al hacer clic en el botón <strong>Presupuesto</strong>, el sistema genera un documento final de la cotización que podrá ser entregado al cliente.
+  <br></br> 
         `,
         presupuesto: `
           <h2>Pantalla de Presupuesto generado</h2>
-          <p>Genera un documento final de la cotización que podrá ser entregado al cliente.</p>
+          <p>Esta pantalla genera un documento que incluye todos los detalles previamente cargados: cliente, productos, condición de venta, medios de pago e importes discriminados.</p>
+          <p>El sistema ofrece las siguientes opciones de salida:</p>
+          <ul>
+    <li><strong>PDF:</strong> genera un archivo en formato PDF para guardar o enviar.</li>
+    <li><strong>Imprimir:</strong> envía el presupuesto directamente a la impresora configurada.</li>
+    <li><strong>Compartir por WhatsApp:</strong> abre la opción para enviar el presupuesto al cliente a través de WhatsApp.</li>
+    <li><strong>Compartir por Correo:</strong> permite enviar el presupuesto directamente por correo electrónico al cliente.</li>
+  </ul>
+  <div class="imagenes">
+        <img src="img/desk-presupuesto-final.png" alt="Pantalla Menú Principal"">
+  </div> 
         `,
       };
 
