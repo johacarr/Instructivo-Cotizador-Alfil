@@ -58,7 +58,9 @@
       .content {
         margin-left: 25%; /* mismo valor que el ancho de la sidebar */
         width: 80%; /* ocupa el resto del espacio */
-        padding: 1rem;
+        
+        padding-left: 5rem;
+        padding-right: 5rem;
         margin-top: 0.5rem;
         height: 100vh;
         overflow-y: auto;
@@ -83,7 +85,7 @@
         border: 2px solid #ccc;
         border-radius: 8px;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        max-width: 45%;
+        max-width: 42%;
       }
     </style>
   </head>
@@ -199,15 +201,15 @@
         Al ingresar a Alfil, se presenta un panel de control que ofrece una visión general de los módulos principales: <strong>Ventas</strong>, <strong>Presupuestos</strong>, <strong>Notas de Ventas</strong>, entre otros.
       </p>      
       <div class="imagenes">
-        <img src="img/mobile - menu.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
+        <img src="imagenes/desk-pagina-principal.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
       </div>
       <p>
         En la barra lateral de navegación, el usuario puede acceder a todas las opciones disponibles.
         Al hacer clic en el ítem <strong>Ventas</strong> y luego en <strong>Cotizar</strong> se abrirá la Pantalla de Selección de Productos.
       </p>
       <div class="imagenes">
-        <img src="img/desk-barra-lateral.png" alt="Pantalla Menú Principal">
-        <img src="img/desk-barra-desplegada.png" alt="Pantalla Menú Principal">
+        <img src="imagenes/desk-principal-barraI.png" alt="Pantalla Menú Principal">
+        <img src="imagenes/desk-pagina-principal-barra.png" alt="Pantalla Menú Principal">
       </div>
         `,
         productos: `
@@ -215,63 +217,73 @@
           
           <p>Esta pantalla está compuesta por 4 secciones principales:</p>
           <div class="imagenes">
-        <img src="img/desk-cotizar.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
+        <img src="imagenes/desk-cotizar.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
       </div>
       <br></br>
-      <ul>
-    <li>
-      <strong>Seleccionar lista de precios:</strong> 
-      Al ingresar a la pantalla de Productos para la Cotización, el primer paso es seleccionar la lista de precios desde el desplegable de listas. 
-      Una vez elegida la lista de precios, todos los productos que se busquen o agreguen estarán asociados a esa lista.
-      <div class="imagenes">
+
+      <h3>1) Seleccionar lista de precios</h3>
+  <p>
+    Al ingresar a la pantalla de Productos para la Cotización, el primer paso es seleccionar la lista de precios desde el desplegable de listas. 
+    Una vez elegida la lista de precios, todos los productos que se busquen o agreguen estarán asociados a esa lista.
+  </p>
+    <div class="imagenes">
         <img src="img/desk-listapre.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
-      </div>
-    </li>
-    <li>
-      <strong>Búsqueda del producto y previsualización:</strong> 
-      En el campo de búsqueda se debe ingresar el nombre o el código alfanumérico del producto. 
-      El sistema mostrará automáticamente los resultados coincidentes, permitiendo también realizar búsquedas parciales.
-      <div class="imagenes">
+      </div> 
+      <br></br>
+
+      <h3>2) Búsqueda del producto y previsualización</h3>
+  <p>
+    En el campo de búsqueda se debe ingresar el nombre o el código alfanumérico del producto. 
+    El sistema mostrará automáticamente los resultados coincidentes, permitiendo también realizar búsquedas parciales.
+  </p>
+    <div class="imagenes">
         <img src="img/desk-productos.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
       </div> 
-      <br></br>
-      Al hacer clic sobre un producto en la lista de resultados, se agrega al área de previsualización.
-      <div class="imagenes">
+      <p>
+    Al hacer clic sobre un producto en la lista de resultados, se agrega al área de previsualización.
+  </p>
+  <div class="imagenes">
         <img src="img/desk-previsualizacion.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
       </div> 
-      <br></br>
-      Si hacemos clic sobre ese producto agregado, el usuario podrá visualizar sus detalles.
-      <div class="imagenes">
+      <p>
+    Si hacemos clic sobre ese producto agregado, el usuario podrá visualizar sus detalles.
+  </p>
+  <div class="imagenes">
         <img src="img/desk-descripcion-prod.png" alt="Pantalla Menú Principal" style="max-width:30%; border:1px solid #ccc; margin-top:10px;">
         <img src="img/desk-descripcion-prodII.png" alt="Pantalla Menú Principal" style="max-width:30%; border:1px solid #ccc; margin-top:10px;">
       </div> 
       <br></br>
-    </li>
-    <li>
-      <strong>Descuento y Cantidad:</strong> 
-      Luego de seleccionar el producto, el sistema permite definir la cantidad deseada y, en caso necesario, aplicar un descuento. 
-      El descuento puede ingresarse en porcentaje (%) <img src="img/desk-icono-desc-porc.png" alt="Pantalla Menú Principal" style="max-width:10%; border:1px solid #ccc; margin-top:10px;"> o en monto fijo ($) <img src="img/desk-icono-desc-pesos.png" alt="Pantalla Menú Principal" style="max-width:10%; border:1px solid #ccc; margin-top:10px;">
-      <div class="imagenes">
+
+      <h3>3) Descuento y Cantidad</h3>
+  <p>
+    Luego de seleccionar el producto, el sistema permite definir la cantidad deseada y, en caso necesario, aplicar un descuento. 
+      
+  </p>
+  <p>El descuento puede ingresarse en porcentaje (%) <img src="img/desk-icono-desc-porc.png" alt="Pantalla Menú Principal" style="max-width:10%; border:1px solid #ccc; margin-top:10px;"> o en monto fijo ($) <img src="img/desk-icono-desc-pesos.png" alt="Pantalla Menú Principal" style="max-width:10%; border:1px solid #ccc; margin-top:10px;"></p>
+    <div class="imagenes">
         <img src="img/desk-descuento.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
       </div> 
-      <br></br>
-      Para alternar entre ambos modos, basta con hacer clic en el icono de porcentaje, que cambiará al icono de monto, y viceversa.
-      <div class="imagenes">
+      <p>
+    Para alternar entre ambos modos, basta con hacer clic en el icono de porcentaje, que cambiará al icono de monto, y viceversa.
+  </p>
+  <div class="imagenes">
         <img src="img/desk-descuentoII.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
       </div> 
-      <br></br>
-      Para definir la cantidad del producto seleccionado se utilizan los iconos + y -, que permiten incrementarla o reducirla de manera sencilla. 
-      Una vez configurada la cantidad (y el descuento en caso de corresponder), presiona el botón <strong>Agregar</strong>.
-      <div class="imagenes">
+      <p>
+    Para definir la cantidad del producto seleccionado se utilizan los iconos + y -, que permiten incrementarla o reducirla de manera sencilla. 
+    Una vez configurada la cantidad (y el descuento en caso de corresponder), presiona el botón <strong>Agregar</strong>.
+  </p>
+  <div class="imagenes">
         <img src="img/desk-cantidad-prod.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
       </div> 
       <br></br>
-    </li>
-    <li>
-      <strong>Productos Agregados:</strong> 
-      Con esta acción, el producto se trasladará automáticamente al área de Productos Agregados de la cotización. 
-      En esta sección se visualizarán todos los artículos que el usuario haya incorporado a la cotización.
-      <div class="imagenes">
+
+      <h3>4) Productos Agregados</h3>
+  <p>
+    Con esta acción, el producto se trasladará automáticamente al área de Productos Agregados de la cotización. 
+    En esta sección se visualizarán todos los artículos que el usuario haya incorporado a la cotización.
+  </p>
+    <div class="imagenes">
         <img src="img/desk-detalle-prod.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
       </div> 
       <br></br>
@@ -279,16 +291,15 @@
     Finalmente, presione el botón <strong>Siguiente</strong> para continuar con la Pantalla de Condiciones de ventas.
 
   </p>
-    </li>
-  </ul>
+    
         `,
         condiciones: `
   <h2>Pantalla de condición de venta</h2>
   <div class="imagenes">
-        <img src="img/desk-condiciones.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
+        <img src="imagenes/desk-condicionventa.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
       </div> 
       <br></br>
-      <h3>Selección de condición de venta</h3>
+      <h3>1) Selección de condición de venta</h3>
   <p>
     En esta pantalla el usuario debe seleccionar, desde el desplegable, la condición de venta que corresponda a la cotización 
     (ejemplo: <em>contado, cuotas, semanal, quincenal</em>, etc.).
@@ -298,7 +309,7 @@
       </div> 
       <br></br>
 
-  <h3>Ingreso de Anticipo</h3>
+  <h3>2) Ingreso de Anticipo</h3>
   <p>
     Una vez seleccionada la condición de venta, el sistema calcula automáticamente el anticipo, siempre y cuando dicha condición lo contemple.
   </p>
@@ -309,7 +320,7 @@
         <img src="img/desk-condicion-anticipo.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
       </div> 
       <br></br>
-  <h3>Resumen de Plan de Pago</h3>
+  <h3>3) Resumen de Plan de Pago</h3>
   <p>En esta sección se presenta un detalle del plan de pago resultante según la condición de venta seleccionada. El resumen incluye:</p>
   <ul>
     <li><strong>Total financiado:</strong> importe que se distribuye en cuotas.</li>
@@ -322,7 +333,7 @@
         <img src="img/desk-condicion-detalle.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
       </div> 
       <br></br>
-  <h3>Vencimientos</h3>
+  <h3>4) Vencimientos</h3>
   <p>En esta sección el sistema muestra un detalle de los vencimientos generados a partir de la condición de venta seleccionada. La vista incluye:</p>
   <ul>
     <li><strong>Número de cuota:</strong> identificación de cada cuota.</li>
@@ -333,7 +344,7 @@
         <img src="img/desk-condicion-vencimiento.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
       </div> 
       <br></br>
-      <h3>Total</h3>
+      <h3>5) Total</h3>
   <p>En esta sección el sistema muestra el total recalculado en función de la condición de venta seleccionada.</p>
   <p>El nuevo total considera:</p>
   <ul>
@@ -350,23 +361,23 @@
         pagos: `
           <h2>Pantalla de Medios de Pago</h2>
           <div class="imagenes">
-        <img src="img/desk-mediopago.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
+        <img src="imagenes/desk-mediopago.png" alt="Pantalla Menú Principal" style="max-width:80%; border:1px solid #ccc; margin-top:10px;">
       </div> 
           <p>En esta etapa el usuario selecciona la forma de pago. El sistema permite elegir entre tarjetas, cheques u otros medios, mostrando planes disponibles y promociones bancarias vigentes.</p>
-        <h3>Saldo</h3>
+        <h3>1) Saldo</h3>
   <p>
     Se muestra el monto pendiente a cancelar. Este valor corresponde al de la primera cuota 
     (o cuota cero, según la condición de venta seleccionada).
   </p>
 
-  <h3>Ingreso de monto a pagar</h3>
+  <h3>2) Ingreso de monto a pagar</h3>
   <p>
     El sistema precarga automáticamente el valor de la primera cuota a saldar. 
     Si se desea pagar de forma parcial, se debe modificar este campo indicando cuánto se abonará 
     en efectivo, tarjeta o cheque.
   </p>
 
-  <h3>Selección de Medios de Pago</h3>
+  <h3>3) Selección de Medios de Pago</h3>
   <p>El usuario puede elegir entre las siguientes opciones:</p>
   <ul>
     <li>
@@ -394,16 +405,14 @@
     </li>
   </ul>
 
-  <h3>Medios de Pago agregados</h3>
+  <h3>4) Pagos agregados</h3>
   <p>Lista los medios de pago agregados. Se muestra:</p>
-  <ul>
-    <li>Descripción del medio de pago.</li>
-    <li>Recargo aplicado (si corresponde).</li>
-    <li>Total del pago.</li>
-  </ul>
+  <div class="imagenes">
+        <img src="img/desk-mediopago-pagos.png" alt="Pantalla Menú Principal"">
+      </div> 
   <p>Cada ítem tiene un botón para eliminarlo si fuese necesario.</p>
 
-  <h3>Total</h3>
+  <h3>5) Total</h3>
   <p>
     El sistema recalcula automáticamente el total de la cotización considerando los medios de pago ingresados.
   </p>
@@ -466,7 +475,7 @@
     <li><strong>Compartir por Correo:</strong> permite enviar el presupuesto directamente por correo electrónico al cliente.</li>
   </ul>
   <div class="imagenes">
-        <img src="img/desk-presupuesto-final.png" alt="Pantalla Menú Principal"">
+        <img src="imagenes/desk-presupuesto.png" alt="Pantalla Menú Principal"">
   </div> 
         `,
       };
